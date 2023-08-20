@@ -5,9 +5,9 @@ import java.time.LocalDate;
 import java.util.Calendar;
 
 public class DobPicker extends JPanel {
-    private JComboBox<Integer> days;
-    private JComboBox<String> months;
-    private JComboBox<Integer> years;
+    private final JComboBox<Integer> days;
+    private final JComboBox<String> months;
+    private final JComboBox<Integer> years;
 
     public DobPicker() {
         //  day dropdown
@@ -49,6 +49,12 @@ public class DobPicker extends JPanel {
 
 
         return LocalDate.of(year, month, day);
+    }
 
+    /* For reset */
+    public void resetDate() {
+        days.setSelectedIndex(0);
+        months.setSelectedIndex(0);
+        years.setSelectedIndex(0);
     }
 }
