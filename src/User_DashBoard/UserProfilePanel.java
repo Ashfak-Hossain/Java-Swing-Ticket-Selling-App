@@ -6,6 +6,9 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class UserProfilePanel extends JPanel implements ActionListener {
 
@@ -14,10 +17,16 @@ public class UserProfilePanel extends JPanel implements ActionListener {
     JTextField phoneNumberField;
     JPasswordField passwordField;
 
-    /* buttons */
-    JButton updateBtn;
+    /* Labels */
+    JLabel name;
+    JLabel email;
+    JLabel phoneNo;
 
-    public UserProfilePanel() {
+
+    /* buttons */ JButton updateBtn;
+
+    public UserProfilePanel(String n, String e, String p) {
+
 
         /* main panel */
         setLayout(null);
@@ -28,19 +37,19 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         /* ============== Labels And Text Fields ============== */
 
         /* Name Label */
-        JLabel name = new JLabel("Ashfak Hossain Evan");
+        name = new JLabel(n);
         name.setFont(new Font("Cascadia Code", Font.PLAIN, 23));
         name.setBounds(400, 90, 250, 40);
         add(name);
 
         /* Email Label */
-        JLabel email = new JLabel("evan1234.ek@gmail.com");
+        email = new JLabel(e);
         email.setFont(new Font("Cascadia Code", Font.PLAIN, 23));
         email.setBounds(400, 140, 350, 40);
         add(email);
 
         /* Phone No Label */
-        JLabel phoneNo = new JLabel("01912124569");
+        phoneNo = new JLabel(p);
         phoneNo.setFont(new Font("Cascadia Code", Font.PLAIN, 23));
         phoneNo.setBounds(400, 190, 350, 40);
         add(phoneNo);
@@ -65,7 +74,7 @@ public class UserProfilePanel extends JPanel implements ActionListener {
 
         /* Password Label for update area */
 
-        JLabel password = new JLabel("Password :");
+        JLabel password = new JLabel("*Password :");
         password.setFont(new Font("Cascadia Code", Font.BOLD, 18));
         password.setBounds(70, 400, 150, 20);
         add(password);
@@ -107,13 +116,88 @@ public class UserProfilePanel extends JPanel implements ActionListener {
 
     }
 
+    public void setLoggedInUser(String name, String email, String phone) {
+
+        /* If not empty then set otherwise remain same values */
+        if (!name.isEmpty()) {
+            this.name.setText(name);
+        }
+        if (!phone.isEmpty()) {
+            this.phoneNo.setText(phone);
+        }
+        this.email.setText(email);
+
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == updateBtn) {
+            /* Getting the values from fields */
             String newName = nameField.getText();
             String newPhoneNumber = phoneNumberField.getText();
-            String newPassword = new String(passwordField.getPassword());
+            String newPasswordField = Arrays.toString(passwordField.getPassword());
+
+            /* Set the values in the dashboard  */
+            setLoggedInUser(newName, email.getText(), newPhoneNumber);
+
+            /* Update in the Database file */
+
+//            updateUserInfoInFile(newName, newPhoneNumber);
+
+            nameField.setText("");
+            phoneNumberField.setText("");
+            passwordField.setText("");
+
 
         }
     }
+
+//    Update user data in Database
+
+//    private void updateUserInfoInFile(String newName, String newPhoneNumber) {
+//
+//        try {
+//
+//            File file = new File("User.txt");
+//            Scanner scanner = new Scanner(file);
+//
+//            boolean flag = false;
+//
+//            while (scanner.hasNextLine()) {
+//
+//                while (scanner.hasNextLine()) {
+//                    String line = scanner.nextLine().trim();
+//                    if (line.startsWith("Name: " + name)) {
+//                        line= "Name: " + newName;
+//                        System.out.println(line);
+//
+//                    } else if (line.startsWith("Email: " + email)) {
+//                        line = "Email: " + email;
+//                    } else if (line.startsWith("PhoneNo: " + phoneNo)) {
+//                        line = "PhoneNo: " + newPhoneNumber;
+//                    }
+//
+//                }
+//
+//
+//
+////                if (email.equals(extractedEmail) && password.equals(extractedPassword)) {
+////                    validCredentials = true;
+////
+////                    System.out.println("User Found");
+//
+//
+//                    break;
+////                }
+//            }
+//
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found: " + e.getMessage());
+//        }
+//
+//
+//    }
+
 }

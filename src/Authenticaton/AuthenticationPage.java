@@ -1,7 +1,7 @@
 package Authenticaton;
 
 
-import User_DashBoard.DashBoard;
+import User_DashBoard.UserProfilePanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,13 +11,10 @@ import java.awt.event.ActionListener;
 
 public class AuthenticationPage extends JFrame implements ActionListener {
 
-    /* create instance of dashboard with Association */
-    private final DashBoard dashBoard;
-
     /* Login and Sign up and Logo Panel */
-    SignUpPanel signUpPanel = new SignUpPanel(this);
-    LoginPanel loginPanel = new LoginPanel(this);
-    JPanel logoPanel = new JPanel(new GridBagLayout());
+
+    SignUpPanel signUpPanel;
+    LoginPanel loginPanel;
 
 
     //For Card Layout panels
@@ -27,11 +24,15 @@ public class AuthenticationPage extends JFrame implements ActionListener {
 
     public AuthenticationPage() {
 
-        dashBoard = new DashBoard(this);
+        /* Login and Sign up and Logo Panel */
+        signUpPanel = new SignUpPanel(this);
+        loginPanel = new LoginPanel(this);
+        JPanel logoPanel = new JPanel(new GridBagLayout());
+
         /*
          * Frame
          */
-        setTitle("Cineplex");
+        setTitle("Paradise Theatre");
         setBounds(300, 90, 900, 600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setResizable(false);
@@ -79,15 +80,8 @@ public class AuthenticationPage extends JFrame implements ActionListener {
         loginPanel.clearLoginFields();
     }
 
-
-    public void showDashboard() {
-        dashBoard.setDashboardPageVisible(true); //Show the User Dashboard
-        setVisible(false); // Hiding the Authentication page
-    }
-
-    public void showAuthenticationPage() {
-        dashBoard.setDashboardPageVisible(false); //Hide the User Dashboard
-        setVisible(true); // show the Authentication page
+    public void setAuthVisible(boolean b) {
+        setVisible(b);
     }
 
 

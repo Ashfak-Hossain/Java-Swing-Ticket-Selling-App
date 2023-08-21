@@ -10,8 +10,6 @@ import java.io.*;
 public class SignUpPanel extends JPanel {
 
 
-    private final JButton reset;
-    private final JButton loginBtn;
     private final JTextField tName;
     private final JTextField tEmail;
     private final DobPicker dobPicker;
@@ -28,7 +26,7 @@ public class SignUpPanel extends JPanel {
          * SignUp Page title
          */
         JLabel title = new JLabel("SignUp");
-        title.setFont(new Font(Font.DIALOG_INPUT, Font.PLAIN, 35));
+        title.setFont(new Font("Cascadia code", Font.PLAIN, 35));
         title.setSize(280, 50);
         title.setLocation(135, 20);
         add(title);
@@ -37,7 +35,7 @@ public class SignUpPanel extends JPanel {
          * Signup page Name Label
          */
         JLabel name = new JLabel("Name: ");
-        name.setFont(new Font("Arial", Font.PLAIN, 18));
+        name.setFont(new Font("Cascadia code", Font.PLAIN, 18));
         name.setSize(80, 15);
         name.setLocation(80, 90);
         add(name);
@@ -46,6 +44,7 @@ public class SignUpPanel extends JPanel {
          * Sign Up page Name Field
          */
         tName = new JTextField();
+        tName.setFont(new Font("Cascadia code", Font.PLAIN, 18));
         tName.setSize(250, 40);
         tName.setLocation(78, 110);
         tName.setBorder(new MatteBorder(0, 0, 1, 0, new Color(0, 0, 0))); // Normally black without hover
@@ -56,7 +55,7 @@ public class SignUpPanel extends JPanel {
          * Signup page Email Label
          */
         JLabel email = new JLabel("Email: ");
-        email.setFont(new Font("Arial", Font.PLAIN, 18));
+        email.setFont(new Font("Cascadia code", Font.PLAIN, 18));
         email.setSize(110, 15);
         email.setLocation(80, 180);
         add(email);
@@ -65,7 +64,7 @@ public class SignUpPanel extends JPanel {
          * Sign up page Email Field
          */
         tEmail = new JTextField();
-        tEmail.setFont(new Font("Arial", Font.PLAIN, 15));
+        tEmail.setFont(new Font("Cascadia code", Font.PLAIN, 15));
         tEmail.setSize(250, 40);
         tEmail.setLocation(78, 190);
         tEmail.setBorder(new MatteBorder(0, 0, 1, 0, new Color(0, 0, 0)));
@@ -77,8 +76,8 @@ public class SignUpPanel extends JPanel {
          */
 
         JLabel dob = new JLabel("Date of Birth: ");
-        dob.setFont(new Font("Arial", Font.PLAIN, 18));
-        dob.setSize(110, 15);
+        dob.setFont(new Font("Cascadia code", Font.PLAIN, 18));
+        dob.setSize(200, 15);
         dob.setLocation(80, 260);
         add(dob);
 
@@ -86,14 +85,16 @@ public class SignUpPanel extends JPanel {
          * Sign up page Date of Birth Field
          */
         dobPicker = new DobPicker();
-        dobPicker.setBounds(50, 290, 300, 50); // Adjust these values as needed
+        dobPicker.setBounds(50, 290, 300, 50);
+        dobPicker.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+
         add(dobPicker); // Add the DobPicker to the signUpPanel
 
         /*
          * Sign up page Phone Number Label
          */
         JLabel phoneNo = new JLabel("Phone No: ");
-        phoneNo.setFont(new Font("Arial", Font.PLAIN, 18));
+        phoneNo.setFont(new Font("Cascadia code", Font.PLAIN, 18));
         phoneNo.setSize(110, 15);
         phoneNo.setLocation(80, 350);
         add(phoneNo);
@@ -104,7 +105,7 @@ public class SignUpPanel extends JPanel {
          */
 
         tPhoneNo = new JTextField();
-        tPhoneNo.setFont(new Font("Arial", Font.PLAIN, 15));
+        tPhoneNo.setFont(new Font("Cascadia code", Font.PLAIN, 15));
         tPhoneNo.setSize(250, 40);
         tPhoneNo.setLocation(78, 355);
         tPhoneNo.setBorder(new MatteBorder(0, 0, 1, 0, new Color(0, 0, 0)));
@@ -116,7 +117,7 @@ public class SignUpPanel extends JPanel {
          * Sign up page password Label
          */
         JLabel password = new JLabel("Password: ");
-        password.setFont(new Font("Arial", Font.PLAIN, 18));
+        password.setFont(new Font("Cascadia code", Font.PLAIN, 18));
         password.setSize(110, 15);
         password.setLocation(80, 420);
         add(password);
@@ -127,7 +128,7 @@ public class SignUpPanel extends JPanel {
          */
 
         tpassword = new JPasswordField();
-        tpassword.setFont(new Font("Arial", Font.PLAIN, 15));
+        tpassword.setFont(new Font("Cascadia code", Font.PLAIN, 15));
         tpassword.setSize(250, 40);
         tpassword.setLocation(78, 425);
         tpassword.setBorder(new MatteBorder(0, 0, 1, 0, new Color(0, 0, 0)));
@@ -140,7 +141,7 @@ public class SignUpPanel extends JPanel {
          * Sign up page Success message Label
          */
         successMessage = new JLabel("");
-        successMessage.setFont(new Font("Arial", Font.PLAIN, 15));
+        successMessage.setFont(new Font("Cascadia code", Font.PLAIN, 15));
         successMessage.setSize(250, 15);
         successMessage.setForeground(Color.RED);
         successMessage.setLocation(80, 540);
@@ -151,30 +152,27 @@ public class SignUpPanel extends JPanel {
         /*
          * Sign Up panel Reset Button
          */
-        reset = new JButton("Reset");
+        JButton reset = new JButton("Reset");
         reset.setSize(100, 20);
         reset.setLocation(81, 510);
-        reset.addActionListener(e -> {
-            clearSignUpFields();
-        });
+        reset.addActionListener(e -> clearSignUpFields());
         add(reset);
 
         /*
          * Sign Up panel Login Btn;
          */
-        loginBtn = new JButton("Log In");
+        JButton loginBtn = new JButton("Log In");
         loginBtn.setSize(100, 20);
         loginBtn.setLocation(190, 510);
-        loginBtn.addActionListener(e -> {
-            authenticationPage.switchToLoginPanel();
-        });
+        loginBtn.addActionListener(e -> authenticationPage.switchToLoginPanel());
         add(loginBtn);
 
 
-        /*
-         * Sign Up panel Sign Up Button
-         */
+        /* Sign Up panel Sign Up Button */
+
         JButton signUpBtn = new JButton("Sign Up");
+        signUpBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+
         signUpBtn.setSize(250, 40);
         signUpBtn.setLocation(77, 465);
         signUpBtn.addActionListener(e -> {
@@ -187,9 +185,9 @@ public class SignUpPanel extends JPanel {
 
             String data = "Name: " + sName + "\n"
                     + "Email: " + sEmail + "\n"
-                    + "Pass: " + sPassword + "\n"
                     + "PhoneNo: " + sPhoneNo + "\n"
-                    + "Date of Birth: " + sDob + "\n";
+                    + "Date of Birth: " + sDob + "\n"
+                    + "Pass: " + sPassword + "\n";
 
 
             if (sName.isEmpty() || sEmail.isEmpty() || sPassword.isEmpty() || sPhoneNo.isEmpty() || sDob == null) {
@@ -206,7 +204,7 @@ public class SignUpPanel extends JPanel {
                     fw.write("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
                     fw.write(System.getProperty("line.separator"));
                     fw.close();
-                } catch (Exception ex) {
+                } catch (IOException ex) {
                     System.out.println(ex);
                 }
 
@@ -223,27 +221,6 @@ public class SignUpPanel extends JPanel {
     public String getName() {
         return tName.getText();
     }
-
-    public String getTEmail() {
-        return tEmail.getText();
-    }
-
-    public LocalDate getDobPicker() {
-        return dobPicker.getSelectedDate();
-    }
-
-    public String getTPhoneNo() {
-        return tPhoneNo.getText();
-    }
-
-    public JButton getResetBtn() {
-        return reset;
-    }
-
-    public JButton getLoginBtn() {
-        return loginBtn;
-    }
-
 
     public void clearSignUpFields() {
         tName.setText("");

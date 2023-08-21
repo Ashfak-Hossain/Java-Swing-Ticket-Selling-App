@@ -1,6 +1,7 @@
 package User_DashBoard;
 
 import Authenticaton.AuthenticationPage;
+import Authenticaton.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,23 +24,30 @@ public class DashBoard extends JFrame implements ActionListener {
     ticketPricePanel ticketPricePanel;
     aboutUsPanel aboutUsPanel;
 
-    /* Association with Another Frame */
-    private final AuthenticationPage authenticationPage;
+    LoginPanel loginPanel;
 
 
-    public DashBoard(AuthenticationPage authenticationPage) {
-        this.authenticationPage = authenticationPage;
+    public DashBoard(LoginPanel loginPanel, String name, String email, String phone) {
+
+        this.loginPanel = loginPanel;
+
+        userProfilePanel = new UserProfilePanel(name, email, phone);
 
         /* Frame */
         setTitle("User DashBoard");
+
         setBounds(120, 90, 1200, 720);
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
         setResizable(false);
 
         /* Container */
         Container container = getContentPane();
         container.setLayout(null);
-        container.setBackground(new Color(116, 155, 194));
+        container.setBackground(new
+
+                Color(116, 155, 194));
 
         /* Logo */
         ImageIcon imageIcon = new ImageIcon("logo.png");
@@ -53,66 +61,93 @@ public class DashBoard extends JFrame implements ActionListener {
         /* ========================= Buttons ========================= */
 
         /* Profile Button */
-        profileBtn = new JButton("Profile");
+        profileBtn = new
+
+                JButton("Profile");
         profileBtn.setBounds(70, 200, 200, 40);
-        profileBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+        profileBtn.setFont(new
+
+                Font("Cascadia code", Font.PLAIN, 15));
         profileBtn.setFocusPainted(false);
         profileBtn.addActionListener(this);
         container.add(profileBtn);
 
         /* ShowTime Button */
-        showTimesBtn = new JButton("Show Times");
+        showTimesBtn = new
+
+                JButton("Show Times");
         showTimesBtn.setBounds(70, 270, 200, 40);
-        showTimesBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+        showTimesBtn.setFont(new
+
+                Font("Cascadia code", Font.PLAIN, 15));
         showTimesBtn.setFocusPainted(false);
         showTimesBtn.addActionListener(this);
         container.add(showTimesBtn);
 
         /* Ticket Price Button */
-        ticketPriceBtn = new JButton("Ticket Price");
+        ticketPriceBtn = new
+
+                JButton("Ticket Price");
         ticketPriceBtn.setBounds(70, 340, 200, 40);
-        ticketPriceBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+        ticketPriceBtn.setFont(new
+
+                Font("Cascadia code", Font.PLAIN, 15));
         ticketPriceBtn.setFocusPainted(false);
         ticketPriceBtn.addActionListener(this);
         container.add(ticketPriceBtn);
 
         /* About Us Button */
-        aboutUsBtn = new JButton("About Us");
+        aboutUsBtn = new
+
+                JButton("About Us");
         aboutUsBtn.setBounds(70, 410, 200, 40);
-        aboutUsBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+        aboutUsBtn.setFont(new
+
+                Font("Cascadia code", Font.PLAIN, 15));
         aboutUsBtn.setFocusPainted(false);
         aboutUsBtn.addActionListener(this);
         container.add(aboutUsBtn);
 
         /* Log Out Button */
-        logOutBtn = new JButton("Log Out");
+        logOutBtn = new
+
+                JButton("Log Out");
         logOutBtn.setBounds(70, 480, 200, 40);
-        logOutBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
+        logOutBtn.setFont(new
+
+                Font("Cascadia code", Font.PLAIN, 15));
         logOutBtn.setFocusPainted(false);
         logOutBtn.addActionListener(this);
         container.add(logOutBtn);
 
 
-        /* ========================= Panels ========================= */
+        /* =========================  Panels ========================= */
 
         /* User Profile Panel */
-        userProfilePanel = new UserProfilePanel();
         container.add(userProfilePanel);
 
         /* Show Time Panel */
-        showTimesPanel = new showTimesPanel();
+        showTimesPanel = new
+
+                showTimesPanel();
         container.add(showTimesPanel);
 
         /* Ticket Price Panel */
-        ticketPricePanel = new ticketPricePanel();
+        ticketPricePanel = new
+
+                ticketPricePanel();
         container.add(ticketPricePanel);
 
         /* About Us Panel */
-        aboutUsPanel = new aboutUsPanel();
+        aboutUsPanel = new
+
+                aboutUsPanel();
         container.add(aboutUsPanel);
 
         setVisible(false);
+
     }
+
 
     public void setDashboardPageVisible(boolean b) {
         setVisible(b);
@@ -125,6 +160,7 @@ public class DashBoard extends JFrame implements ActionListener {
         ticketPricePanel.setVisible(false);
         aboutUsPanel.setVisible(false);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -141,7 +177,8 @@ public class DashBoard extends JFrame implements ActionListener {
             hidePanels();
             aboutUsPanel.setVisible(true);
         } else if (e.getSource() == logOutBtn) {
-            authenticationPage.showAuthenticationPage();
+            hidePanels();
+            loginPanel.showAuthenticationPage();
         }
     }
 }
