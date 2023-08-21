@@ -1,11 +1,11 @@
-package User_DashBoard;
+package userDashBoard;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
 
-public class ticketPricePanel extends JPanel {
-    public ticketPricePanel() {
+public class TicketPricePanel extends JPanel {
+    public TicketPricePanel() {
 
         /* main panel */
         setLayout(null);

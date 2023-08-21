@@ -1,6 +1,7 @@
-import Authenticaton.AuthenticationPage;
+import authenticaton.AuthenticationPage;
 
 import javax.swing.*;
+
 
 class App {
     public static void main(String[] args) {

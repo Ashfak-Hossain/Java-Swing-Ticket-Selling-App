@@ -1,11 +1,11 @@
-package User_DashBoard;
+package userDashBoard;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
 
-public class aboutUsPanel extends JPanel {
-    public aboutUsPanel() {
+public class AboutUsPanel extends JPanel {
+    public AboutUsPanel() {
 
         /* main panel */
         setLayout(null);

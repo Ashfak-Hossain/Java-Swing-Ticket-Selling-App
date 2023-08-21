@@ -1,6 +1,6 @@
-package User_DashBoard;
+package userDashBoard;
 
-import Authenticaton.LoginPanel;
+import authenticaton.LoginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,9 +19,9 @@ public class DashBoard extends JFrame implements ActionListener {
 
     /* Panels */
     UserProfilePanel userProfilePanel;
-    showTimesPanel showTimesPanel;
-    ticketPricePanel ticketPricePanel;
-    aboutUsPanel aboutUsPanel;
+    ShowTimesPanel showTimesPanel;
+    TicketPricePanel ticketPricePanel;
+    AboutUsPanel aboutUsPanel;
 
     LoginPanel loginPanel;
 
@@ -126,21 +126,15 @@ public class DashBoard extends JFrame implements ActionListener {
         container.add(userProfilePanel);
 
         /* Show Time Panel */
-        showTimesPanel = new
-
-                showTimesPanel();
+        showTimesPanel = new ShowTimesPanel();
         container.add(showTimesPanel);
 
         /* Ticket Price Panel */
-        ticketPricePanel = new
-
-                ticketPricePanel();
+        ticketPricePanel = new TicketPricePanel();
         container.add(ticketPricePanel);
 
         /* About Us Panel */
-        aboutUsPanel = new
-
-                aboutUsPanel();
+        aboutUsPanel = new AboutUsPanel();
         container.add(aboutUsPanel);
 
         setVisible(false);

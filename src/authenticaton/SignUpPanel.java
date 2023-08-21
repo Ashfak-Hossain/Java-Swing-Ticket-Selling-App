@@ -1,4 +1,4 @@
-package Authenticaton;
+package authenticaton;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;

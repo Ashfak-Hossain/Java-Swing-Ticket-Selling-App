@@ -1,6 +1,6 @@
-package Authenticaton;
+package authenticaton;
 
-import User_DashBoard.DashBoard;
+import userDashBoard.DashBoard;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;

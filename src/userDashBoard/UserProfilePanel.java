@@ -1,4 +1,4 @@
-package User_DashBoard;
+package userDashBoard;
 
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
