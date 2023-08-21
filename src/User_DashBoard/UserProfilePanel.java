@@ -6,9 +6,7 @@ import javax.swing.border.MatteBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.*;
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class UserProfilePanel extends JPanel implements ActionListener {
 
@@ -136,7 +134,7 @@ public class UserProfilePanel extends JPanel implements ActionListener {
             /* Getting the values from fields */
             String newName = nameField.getText();
             String newPhoneNumber = phoneNumberField.getText();
-            String newPasswordField = Arrays.toString(passwordField.getPassword());
+//            String newPasswordField = Arrays.toString(passwordField.getPassword());
 
             /* Set the values in the dashboard  */
             setLoggedInUser(newName, email.getText(), newPhoneNumber);

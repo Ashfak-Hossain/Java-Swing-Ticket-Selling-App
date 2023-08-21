@@ -1,8 +1,5 @@
 package Authenticaton;
 
-
-import User_DashBoard.UserProfilePanel;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

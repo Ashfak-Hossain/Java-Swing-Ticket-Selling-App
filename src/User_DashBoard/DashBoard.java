@@ -1,6 +1,5 @@
 package User_DashBoard;
 
-import Authenticaton.AuthenticationPage;
 import Authenticaton.LoginPanel;
 
 import javax.swing.*;

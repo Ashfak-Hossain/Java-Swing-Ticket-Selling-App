@@ -1,7 +1,6 @@
 package Authenticaton;
 
 import User_DashBoard.DashBoard;
-import User_DashBoard.UserProfilePanel;
 
 import javax.swing.*;
 import javax.swing.border.MatteBorder;
