@@ -1,0 +1,38 @@
+Name: Ashfak
+Email: berlin
+PhoneNo: 
+MovieName: The Avengers
+Movie ShowTime: Friday 3:30 PM
+Buy ticket: True 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak
+Email: berlin
+PhoneNo: 
+MovieName: Thor: The Dark World
+Movie ShowTime: Sunday 3:30 PM
+Buy ticket: True 
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak Hossain Evan
+Email: berlin@
+PhoneNo: 01912124569
+MovieName: Captain America: The First Avenger
+Movie ShowTime: Thursday 3:30 PM
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak Hossain Evan
+Email: berlin@
+PhoneNo: 01912124569
+MovieName: Thor: The Dark World
+Movie ShowTime: Sunday 3:30 PM
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak Hossain Evan
+Email: berlin@
+PhoneNo: 01912124569
+MovieName: Thor: The Dark World
+Movie ShowTime: Sunday 3:30 PM
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak
+Email: berlin
+PhoneNo: 01912124569
+MovieName: Captain America: The First Avenger
+Movie ShowTime: Thursday 3:30 PM
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
