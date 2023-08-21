@@ -1,7 +1,7 @@
-Name: berlin
-Email: berlin
-PhoneNo: sjns
-Date of Birth: 2022-02-03
+Name: Ashfak Hossain Evan
+Email: berlin@gmail.com
+PhoneNo: 01900000000
+Date of Birth: 2022-03-26
 Pass: berlin
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 

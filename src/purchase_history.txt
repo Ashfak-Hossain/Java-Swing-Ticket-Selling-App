@@ -1,12 +1,7 @@
-Name: berlin
-Email: berlin
-PhoneNo: sjns
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Ashfak Hossain Evan
+Email: berlin@gmail.com
+PhoneNo: 01900000000
 MovieName: The Avengers
 Movie ShowTime: Friday 3:30 PM
-= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
-Name: berlin
-Email: berlin
-PhoneNo: sjns
-MovieName: Black Panther
-Movie ShowTime: Sunday 3:30 PM
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
