@@ -168,8 +168,6 @@ public class SignUpPanel extends JPanel {
         add(loginBtn);
 
 
-        /* Sign Up panel Sign Up Button */
-
         JButton signUpBtn = new JButton("Sign Up");
         signUpBtn.setFont(new Font("Cascadia code", Font.PLAIN, 15));
 
@@ -198,14 +196,14 @@ public class SignUpPanel extends JPanel {
                 successMessage.setText("Registration Successful..");
 
                 try {
-                    FileWriter fw = new FileWriter("User.txt", true);
+                    FileWriter fw = new FileWriter(".../User.txt", true);
                     fw.write(data);
                     fw.write(System.getProperty("line.separator"));
                     fw.write("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
                     fw.write(System.getProperty("line.separator"));
                     fw.close();
                 } catch (IOException ex) {
-                    System.out.println(ex);
+                    System.out.println(ex.getMessage());
                 }
 
                 clearSignUpFields();

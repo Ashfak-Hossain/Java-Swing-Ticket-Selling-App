@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class MovieTableModel extends AbstractTableModel {
 
-    private ArrayList<Movie> data;
+    public ArrayList<Movie> data;
     final String[] columnNames = {"Movie", "Category", "Genre", "Show Time", "Available", "Price"};
 
 
@@ -42,4 +42,6 @@ public class MovieTableModel extends AbstractTableModel {
         };
 
     }
+
+
 }

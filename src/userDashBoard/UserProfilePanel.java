@@ -19,10 +19,17 @@ public class UserProfilePanel extends JPanel implements ActionListener {
     JLabel email;
     JLabel phoneNo;
 
+    String Name;
+    String Email;
+    String Phone;
+
 
     /* buttons */ JButton updateBtn;
 
     public UserProfilePanel(String n, String e, String p) {
+        this.Name = n;
+        this.Email = e;
+        this.Phone = p;
 
 
         /* main panel */
@@ -111,6 +118,20 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         add(updateBtn);
 
 
+    }
+
+
+    /* Getter for storing ticket purchase information */
+    public String getName() {
+        return Name;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public String getPhoneNo() {
+        return Phone;
     }
 
     public void setLoggedInUser(String name, String email, String phone) {

@@ -5,6 +5,11 @@ import javax.swing.*;
 
 class App {
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(AuthenticationPage::new);
+        try {
+            SwingUtilities.invokeLater(AuthenticationPage::new);
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }
+

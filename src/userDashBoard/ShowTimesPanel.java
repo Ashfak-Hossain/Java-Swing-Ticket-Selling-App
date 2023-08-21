@@ -6,6 +6,8 @@ import models.MovieTableModel;
 import javax.swing.*;
 import javax.swing.border.BevelBorder;
 import java.awt.*;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ShowTimesPanel extends JPanel {
@@ -13,7 +15,11 @@ public class ShowTimesPanel extends JPanel {
     MovieTableModel tableModel;
     JScrollPane scrollPane;
 
-    public ShowTimesPanel() {
+    UserProfilePanel userProfilePanel;
+
+    public ShowTimesPanel(UserProfilePanel userProfilePanel) {
+
+        this.userProfilePanel = userProfilePanel;
 
         /* main panel */
         setLayout(new BorderLayout());
@@ -53,6 +59,47 @@ public class ShowTimesPanel extends JPanel {
         scrollPane = new JScrollPane(table);
         add(scrollPane, BorderLayout.CENTER);
 
+
         setVisible(false);
     }
+
+    public int getSelectedRowIndex() {
+        return table.getSelectedRow();
+    }
+
+    public Movie getSelectedMovie(int rowIndex) {
+        if (rowIndex >= 0 && rowIndex < tableModel.getRowCount()) {
+            return tableModel.data.get(rowIndex);
+        }
+        return null;
+    }
+
+
+    /* To store the purchased Data in purchase_history file */
+    public void saveMovieData(Movie selectedMovie) {
+        String userInfo = getUserInfo();
+        String purchaseInfo = userInfo
+                + "MovieName: " + selectedMovie.getMovieName() + "\n"
+                + "Movie ShowTime: " + selectedMovie.getShowTime();
+        try (FileWriter fw = new FileWriter("purchase_history.txt", true)) {
+            fw.write(purchaseInfo);
+            fw.write(System.getProperty("line.separator"));
+            fw.write("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+            fw.write(System.getProperty("line.separator"));
+            JOptionPane.showMessageDialog(this, "Ticket Purchased!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+    }
+
+    private String getUserInfo() {
+
+        return "Name: " + userProfilePanel.getName() + "\n"
+                + "Email: " + userProfilePanel.getEmail() + "\n"
+                + "PhoneNo: " + userProfilePanel.getPhoneNo() + "\n";
+
+    }
 }
+
