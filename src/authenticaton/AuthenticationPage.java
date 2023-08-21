@@ -47,7 +47,7 @@ public class AuthenticationPage extends JFrame implements ActionListener {
         cardLayout = (CardLayout) cardPanel.getLayout();
 
         /* * Theatre Photo */
-        ImageIcon imageIcon = new ImageIcon("logo.png");
+        ImageIcon imageIcon = new ImageIcon("/Users/ashfakhossainevan/AIUB/Swing project/untitled/logo.png");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(470, 230, Image.SCALE_SMOOTH);
         ImageIcon newImageIcon = new ImageIcon(newImage);

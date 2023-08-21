@@ -1,15 +1,16 @@
+
+/*
+ ? Author: Ashfak Hossain Evan
+ ? American International University Bangladesh
+ * Java Swing Graphics User Interface Project *: Simple Movie Theatre Ticket selling App
+ */
+
 import authenticaton.AuthenticationPage;
 
-import javax.swing.*;
-
+import static javax.swing.SwingUtilities.invokeLater;
 
 class App {
     public static void main(String[] args) {
-        try {
-            SwingUtilities.invokeLater(AuthenticationPage::new);
-        } catch (Exception e) {
-            throw e;
-        }
+        invokeLater(AuthenticationPage::new);
     }
 }
-

@@ -196,7 +196,7 @@ public class SignUpPanel extends JPanel {
                 successMessage.setText("Registration Successful..");
 
                 try {
-                    FileWriter fw = new FileWriter(".../User.txt", true);
+                    FileWriter fw = new FileWriter("/Users/ashfakhossainevan/AIUB/Swing project/untitled/src/User.txt", true);
                     fw.write(data);
                     fw.write(System.getProperty("line.separator"));
                     fw.write("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");

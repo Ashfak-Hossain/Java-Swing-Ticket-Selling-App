@@ -10,7 +10,6 @@ import java.awt.event.ActionListener;
 
 public class DashBoard extends JFrame implements ActionListener {
 
-
     /* Buttons */
     private final JButton profileBtn;
     private final JButton showTimesBtn;
@@ -25,7 +24,6 @@ public class DashBoard extends JFrame implements ActionListener {
     TicketPricePanel ticketPricePanel;
     AboutUsPanel aboutUsPanel;
     LoginPanel loginPanel;
-
 
     public DashBoard(LoginPanel loginPanel, String name, String email, String phone) {
 
@@ -48,7 +46,7 @@ public class DashBoard extends JFrame implements ActionListener {
         container.setBackground(new Color(116, 155, 194));
 
         /* Logo */
-        ImageIcon imageIcon = new ImageIcon("logo.png");
+        ImageIcon imageIcon = new ImageIcon("/Users/ashfakhossainevan/AIUB/Swing project/untitled/logo.png");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(320, 150, Image.SCALE_SMOOTH);
         ImageIcon newImageIcon = new ImageIcon(newImage);
@@ -107,15 +105,14 @@ public class DashBoard extends JFrame implements ActionListener {
         buyBtn.addActionListener(this);
         container.add(buyBtn);
 
-
-
-        /* =========================  Panels ========================= */
+        /* ========================= Panels ========================= */
 
         /* User Profile Panel */
         container.add(userProfilePanel);
 
         /* Show Time Panel */
-        showTimesPanel = new ShowTimesPanel(userProfilePanel); //constructor for access getter from userProfilePanel to the showTimesPanel
+        showTimesPanel = new ShowTimesPanel(userProfilePanel); // constructor for access getter from userProfilePanel to
+                                                               // the showTimesPanel
         container.add(showTimesPanel);
 
         /* Ticket Price Panel */
@@ -130,11 +127,9 @@ public class DashBoard extends JFrame implements ActionListener {
 
     }
 
-
     public void setDashboardPageVisible(boolean b) {
         setVisible(b);
     }
-
 
     private void hidePanels() {
         userProfilePanel.setVisible(false);
@@ -142,7 +137,6 @@ public class DashBoard extends JFrame implements ActionListener {
         ticketPricePanel.setVisible(false);
         aboutUsPanel.setVisible(false);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

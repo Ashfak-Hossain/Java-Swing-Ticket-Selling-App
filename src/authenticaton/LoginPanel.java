@@ -157,7 +157,7 @@ public class LoginPanel extends JPanel {
         boolean validCredentials = false;
 
         try {
-            File file = new File("User.txt");
+            File file = new File("/Users/ashfakhossainevan/AIUB/Swing project/untitled/src/User.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
