@@ -23,14 +23,12 @@ public class UserProfilePanel extends JPanel implements ActionListener {
     String Email;
     String Phone;
 
-
     /* buttons */ JButton updateBtn;
 
     public UserProfilePanel(String n, String e, String p) {
         this.Name = n;
         this.Email = e;
         this.Phone = p;
-
 
         /* main panel */
         setLayout(null);
@@ -43,7 +41,7 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         /* Name Label */
         name = new JLabel(n);
         name.setFont(new Font("Cascadia Code", Font.PLAIN, 23));
-        name.setBounds(400, 90, 250, 40);
+        name.setBounds(400, 90, 400, 40);
         add(name);
 
         /* Email Label */
@@ -57,8 +55,6 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         phoneNo.setFont(new Font("Cascadia Code", Font.PLAIN, 23));
         phoneNo.setBounds(400, 190, 350, 40);
         add(phoneNo);
-
-
 
         /* Name Label for update area */
 
@@ -117,9 +113,7 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         updateBtn.addActionListener(this);
         add(updateBtn);
 
-
     }
-
 
     /* Getter for storing ticket purchase information */
     public String getName() {
@@ -145,7 +139,6 @@ public class UserProfilePanel extends JPanel implements ActionListener {
         }
         this.email.setText(email);
 
-
     }
 
     @Override
@@ -154,68 +147,67 @@ public class UserProfilePanel extends JPanel implements ActionListener {
             /* Getting the values from fields */
             String newName = nameField.getText();
             String newPhoneNumber = phoneNumberField.getText();
-//            String newPasswordField = Arrays.toString(passwordField.getPassword());
+            // String newPasswordField = Arrays.toString(passwordField.getPassword());
 
-            /* Set the values in the dashboard  */
+            /* Set the values in the dashboard */
             setLoggedInUser(newName, email.getText(), newPhoneNumber);
 
             /* Update in the Database file */
 
-//            updateUserInfoInFile(newName, newPhoneNumber);
+            // updateUserInfoInFile(newName, newPhoneNumber);
 
             nameField.setText("");
             phoneNumberField.setText("");
             passwordField.setText("");
 
-
         }
     }
 
-//    Update user data in Database
+    // Update user data in Database
 
-//    private void updateUserInfoInFile(String newName, String newPhoneNumber) {
-//
-//        try {
-//
-//            File file = new File("User.txt");
-//            Scanner scanner = new Scanner(file);
-//
-//            boolean flag = false;
-//
-//            while (scanner.hasNextLine()) {
-//
-//                while (scanner.hasNextLine()) {
-//                    String line = scanner.nextLine().trim();
-//                    if (line.startsWith("Name: " + name)) {
-//                        line= "Name: " + newName;
-//                        System.out.println(line);
-//
-//                    } else if (line.startsWith("Email: " + email)) {
-//                        line = "Email: " + email;
-//                    } else if (line.startsWith("PhoneNo: " + phoneNo)) {
-//                        line = "PhoneNo: " + newPhoneNumber;
-//                    }
-//
-//                }
-//
-//
-//
-////                if (email.equals(extractedEmail) && password.equals(extractedPassword)) {
-////                    validCredentials = true;
-////
-////                    System.out.println("User Found");
-//
-//
-//                    break;
-////                }
-//            }
-//
-//
-//        } catch (FileNotFoundException e) {
-//            System.out.println("File not found: " + e.getMessage());
-//        }
-//
-//
-//    }
+    // private void updateUserInfoInFile(String newName, String newPhoneNumber) {
+    //
+    // try {
+    //
+    // File file = new File("User.txt");
+    // Scanner scanner = new Scanner(file);
+    //
+    // boolean flag = false;
+    //
+    // while (scanner.hasNextLine()) {
+    //
+    // while (scanner.hasNextLine()) {
+    // String line = scanner.nextLine().trim();
+    // if (line.startsWith("Name: " + name)) {
+    // line= "Name: " + newName;
+    // System.out.println(line);
+    //
+    // } else if (line.startsWith("Email: " + email)) {
+    // line = "Email: " + email;
+    // } else if (line.startsWith("PhoneNo: " + phoneNo)) {
+    // line = "PhoneNo: " + newPhoneNumber;
+    // }
+    //
+    // }
+    //
+    //
+    //
+    //// if (email.equals(extractedEmail) && password.equals(extractedPassword)) {
+    //// validCredentials = true;
+    ////
+    //// System.out.println("User Found");
+    //
+    //
+    // break;
+    //// }
+    // }
+    //
+    //
+    // } catch (FileNotFoundException e) {
+    // System.out.println("File not found: " + e.getMessage());
+    // }
+    //
+    //
+    // }
 
 }
