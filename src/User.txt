@@ -5,3 +5,10 @@ Date of Birth: 2022-03-26
 Pass: berlin
 
 = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
+Name: Thor The God Of Thunder
+Email: thor@gmail.com
+PhoneNo: 0191876
+Date of Birth: 2021-04-03
+Pass: thor
+
+= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = 
