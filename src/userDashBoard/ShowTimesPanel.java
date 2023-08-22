@@ -86,7 +86,7 @@ public class ShowTimesPanel extends JPanel {
                 + "MovieName: " + selectedMovie.getMovieName() + "\n"
                 + "Movie ShowTime: " + selectedMovie.getShowTime();
         try (FileWriter fw = new FileWriter(
-                "/Users/ashfakhossainevan/AIUB/Swing project/untitled/src/purchase_history.txt", true)) {
+                "/Users/ashfakhossainevan/AIUB/Swing project/Ticket Selling App/src/purchase_history.txt", true)) {
             fw.write(purchaseInfo);
             fw.write(System.getProperty("line.separator"));
             fw.write("= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");

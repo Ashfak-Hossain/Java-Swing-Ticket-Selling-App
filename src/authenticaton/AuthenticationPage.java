@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class AuthenticationPage extends JFrame implements ActionListener {
 
     /* Login and Sign up and Logo Panel */
@@ -13,11 +12,9 @@ public class AuthenticationPage extends JFrame implements ActionListener {
     SignUpPanel signUpPanel;
     LoginPanel loginPanel;
 
-
-    //For Card Layout panels
+    // For Card Layout panels
     private final JPanel cardPanel;
     private final CardLayout cardLayout;
-
 
     public AuthenticationPage() {
 
@@ -41,19 +38,18 @@ public class AuthenticationPage extends JFrame implements ActionListener {
         container.setLayout(new GridLayout(1, 2));
 
         /*
-         * Card Panel and  Layout
+         * Card Panel and Layout
          */
         cardPanel = new JPanel(new CardLayout());
         cardLayout = (CardLayout) cardPanel.getLayout();
 
         /* * Theatre Photo */
-        ImageIcon imageIcon = new ImageIcon("/Users/ashfakhossainevan/AIUB/Swing project/untitled/logo.png");
+        ImageIcon imageIcon = new ImageIcon("/Users/ashfakhossainevan/AIUB/Swing project/Ticket Selling App/logo.png");
         Image image = imageIcon.getImage();
         Image newImage = image.getScaledInstance(470, 230, Image.SCALE_SMOOTH);
         ImageIcon newImageIcon = new ImageIcon(newImage);
         JLabel logoLabel = new JLabel(newImageIcon);
         logoPanel.add(logoLabel);
-
 
         /*
          * Add login and signup Panels to the Card Panel
@@ -71,7 +67,7 @@ public class AuthenticationPage extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    /*To change The Panel*/
+    /* To change The Panel */
     public void switchToLoginPanel() {
         cardLayout.show(cardPanel, "login");
         loginPanel.clearLoginFields();
@@ -80,7 +76,6 @@ public class AuthenticationPage extends JFrame implements ActionListener {
     public void setAuthVisible(boolean b) {
         setVisible(b);
     }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {

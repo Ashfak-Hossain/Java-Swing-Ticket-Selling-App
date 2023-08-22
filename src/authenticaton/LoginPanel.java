@@ -30,10 +30,8 @@ public class LoginPanel extends JPanel {
     String extractedPassword = "";
     String extractedPhoneNumber = "";
 
-
     public LoginPanel(AuthenticationPage authenticationPage) {
         this.authenticationPage = authenticationPage;
-
 
         setLayout(null);
 
@@ -86,7 +84,6 @@ public class LoginPanel extends JPanel {
         pf.setOpaque(false);
         add(pf);
 
-
         /*
          * SignUp Text
          */
@@ -105,7 +102,6 @@ public class LoginPanel extends JPanel {
         loginFailedMessage.setLocation(80, 470);
         add(loginFailedMessage);
 
-
         /*
          * SignUp Button
          */
@@ -115,8 +111,6 @@ public class LoginPanel extends JPanel {
         signUpBtn.setLocation(280, 405);
         signUpBtn.addActionListener(authenticationPage);
         add(signUpBtn);
-
-
 
         /*
          * Login Button
@@ -130,7 +124,6 @@ public class LoginPanel extends JPanel {
             performLogin(userEmail, new String(userPasswordChars));
         });
         add(loginBtn);
-
 
     }
 
@@ -150,14 +143,14 @@ public class LoginPanel extends JPanel {
         slideTimer.start();
     }
 
-
     /* All login related task implemented here */
 
     public void performLogin(String email, String password) {
         boolean validCredentials = false;
 
         try {
-            File file = new File("/Users/ashfakhossainevan/AIUB/Swing project/untitled/src/User.txt");
+
+            File file = new File("/Users/ashfakhossainevan/AIUB/Swing project/Ticket Selling App/src/User.txt");
             Scanner scanner = new Scanner(file);
 
             while (scanner.hasNextLine()) {
@@ -181,7 +174,6 @@ public class LoginPanel extends JPanel {
 
                     System.out.println("User Found");
 
-
                     break;
                 }
             }
@@ -199,7 +191,7 @@ public class LoginPanel extends JPanel {
             tEmail.setText("");
             pf.setText("");
 
-            // After successful login, create  DashBoard
+            // After successful login, create DashBoard
 
             /* Sending the loggedIn username, email and phone for showing in dashboard */
 
@@ -213,17 +205,15 @@ public class LoginPanel extends JPanel {
         }
     }
 
-
     public void showDashboard() {
-        dashBoard.setDashboardPageVisible(true); //Show the User Dashboard
+        dashBoard.setDashboardPageVisible(true); // Show the User Dashboard
         authenticationPage.setAuthVisible(false); // Hiding the Authentication page
     }
 
     public void showAuthenticationPage() {
-        dashBoard.setDashboardPageVisible(false); //Hide the User Dashboard
+        dashBoard.setDashboardPageVisible(false); // Hide the User Dashboard
         authenticationPage.setAuthVisible(true); // show the Authentication page
     }
-
 
     public JButton getSignUpButton() {
         return signUpBtn;
